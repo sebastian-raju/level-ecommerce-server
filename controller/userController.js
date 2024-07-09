@@ -69,6 +69,7 @@ exports.registerUser = asyncHandler(async(req,res) => {
 exports.logoutUser = asyncHandler(async(req,res) => {
   res.cookie('jwt', '', {
     httpOnly: true,
+    sameSite: 'None', 
     expires: new Date(0),
   })
 
