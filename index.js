@@ -21,7 +21,7 @@ const corsOptions = {
   credentials: true, // Indicates that cookies and credentials should be included.
 };
  
-serverApp.use(cors(corsOptions));
+serverApp.use(cors());
 
 // Body parser middleware
 serverApp.use(express.json());
