@@ -44,6 +44,11 @@ serverApp.get('/api/config/paypal', (req,res) =>
 const dirname = path.resolve();  
 serverApp.use('/uploads', express.static(path.join(dirname, '/uploads')));
 
+
+serverApp.get('*', (req, res)=>{
+  res.sendFile(path.resolve(dirname, 'index.html'));
+})
+
 serverApp.use(notFound);
 serverApp.use(errorHandler);
 
